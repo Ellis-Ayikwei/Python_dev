@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from sqlmodel import Field, Session, SQLModel, create_engine, select
 from config import settings
+from fastapi.responses import PlainTextResponse
 
 
 class Hero(SQLModel, table=True):
@@ -27,7 +28,7 @@ def on_startup():
 
 @app.get("/")
 def hello():
-    return "Hello, Docker!"
+    return "Hello, Docker!!!!"
 
 
 @app.post("/heroes/")
